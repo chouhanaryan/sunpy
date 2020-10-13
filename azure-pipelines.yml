@@ -50,33 +50,33 @@ jobs:
         - libpng-devel
 
     envs:
-      - macos: py38
-        name: py38_test
+      - macos: py39
+        name: py39_test
         posargs: -n=1
 
       - windows: py37
         name: py37_test
 
-      - linux: py38-online
-        name: py38_test_online
+      - linux: py39-online
+        name: py39_test_online
 
-      - linux32: py38-32bit
-        name: py38_test_32bit
+      - linux32: py39-32bit
+        name: py39_test_32bit
 
       - linux: codestyle
         name: python_codestyle
         pytest: false
 
-      - linux: py38-hypothesis
+      - linux: py39-hypothesis
 
-      - linux: py38-conda
-        name: py38_conda
+      - linux: py39-conda
+        name: py39_conda
         libraries: {}
 
       - linux: py37-oldestdeps
         name: py37_test_oldestdeps
 
-      - linux: py38-devdeps
+      - linux: py39-devdeps
 
       - linux: build_docs
         posargs: " "
@@ -99,8 +99,8 @@ jobs:
         - sdist
       dependsOn:
         - py37_test
-        - py38_test
-        - py38_test_online
-        - py38_test_32bit
+        - py39_test
+        - py39_test_online
+        - py39_test_32bit
         - py37_test_oldestdeps
-        - py38_conda
+        - py39_conda
